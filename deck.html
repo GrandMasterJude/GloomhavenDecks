@@ -30,6 +30,10 @@
             <div>
                 <img id="cardFront" src="img/Blank.png" style="border-radius: 25px" ondblclick="Shuffle()">
             </div>
+            <div>
+                <p id="decktotal"></p>
+                <p id="modifieraverage"></p>
+            </div>
         </div>
         <div class="right">
             <select name="Character" autocomplete="off" onchange="LoadCharacterPerks(this.value)">
@@ -40,7 +44,7 @@
                 <option value="tinkerer">Tinkerer</option>
                 <option value="cragheart">Cragheart</option>
                 <option value="mindthief">Mindthief</option>
-                <option value="soothsinger">Soothsinger</option>
+                <option value="musicnote">Music Note</option>
             </select>
 
             <div class="perks" id="perks"> 

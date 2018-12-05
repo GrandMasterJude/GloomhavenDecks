@@ -1,48 +1,50 @@
+<html>
 <div class="perk">    
-    <input type="checkbox" id="perk 1" onclick="RemoveFour0s(this)">
-    <label for="perk 1">Remove four +0 cards</label>
+    <input type="checkbox" id="perk 1" data-rcard="+0" data-rnumber="4" onclick="Remove(this)" />
+    <label for="perk 1">Remove four <img src="img/small_+0.png" /> cards</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 2" onclick="Replace1With1(this)">
-    <input type="checkbox" id="perk 2.2" onclick="Replace1With1(this)">
-    <label for="perk 2">Replace one -1 card with one +1 card</label>
+    <input type="checkbox" id="perk 2" data-rcard="-1" data-rnumber="1" data-addcard="+1" data-addnumber="1" onclick="Replace(this)" />
+    <input type="checkbox" id="perk 2.2" data-rcard="-1" data-rnumber="1" data-addcard="+1" data-addnumber="1" onclick="Replace(this)" />
+    <label for="perk 2">Replace one <img src="img/small_-1.png" /> card with one <img src="img/small_+1.png" /> card</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 3" onclick="AddTwo1s(this)">
-    <input type="checkbox" id="perk 3.2" onclick="AddTwo1s(this)">
-    <label for="perk 3">Add two +1 cards</label>
-</div>
-<div class="perk">    
-    <input type="checkbox" id="perk 4" onclick="AddOne0Stun(this)">
-    <label for="perk 4">Add one +0 <img src="img/small_Stun.png"> card</label>
+    <input type="checkbox" id="perk 3" data-addcard="+1" data-addnumber="2" onclick="Add(this)" />
+    <input type="checkbox" id="perk 3.2" data-addcard="+1" data-addnumber="2" onclick="Add(this)" />
+    <label for="perk 3">Add two <img src="img/small_+1.png" /> cards</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 5" onclick="AddOne1Wound(this)">
-    <label for="perk 5">Add one +1 <img src="img/small_Wound.png"> card</label>
+    <input type="checkbox" id="perk 4" data-addcard="+0 Stun" data-addnumber="1" onclick="Add(this)" />
+    <label for="perk 4">Add one <img src="img/small_+0.png" /> <img src="img/small_Stun.png" /> card</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 6" onclick="AddOne1Immobilize(this)">
-    <label for="perk 6">Add one +1 <img src="img/small_Immobilize.png"> card</label>
+    <input type="checkbox" id="perk 5" data-addcard="+1 Wound" data-addnumber="1" onclick="Add(this)" />
+    <label for="perk 5">Add one <img src="img/small_+1.png" /> <img src="img/small_Wound.png" /> card</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 7" onclick="AddOne1Curse(this)">
-    <label for="perk 7">Add one +1 <img src="img/small_Curse.png"> card</label>
+    <input type="checkbox" id="perk 6" data-addcard="+1 Immobilize" data-addnumber="1" onclick="Add(this)" />
+    <label for="perk 6">Add one <img src="img/small_+1.png" /> <img src="img/small_Immobilize.png" /> card</label>
+</div>
+<div class="perk">    
+    <input type="checkbox" id="perk 7" data-addcard="+1 Curse" data-addnumber="1" onclick="Add(this)" />
+    <label for="perk 7">Add one <img src="img/small_+1.png" /> <img src="img/small_Curse.png" /> card</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 8" onclick="AddTwo2Fires(this)">
-    <input type="checkbox" id="perk 8.2" onclick="AddTwo2Fires(this)">
-    <label for="perk 8">Add two +2 <img src="img/small_Fire.png"> cards</label>
+    <input type="checkbox" id="perk 8" data-addcard="+2 Fire" data-addnumber="2" onclick="Add(this)" />
+    <input type="checkbox" id="perk 8.2" data-addcard="+2 Fire" data-addnumber="2" onclick="Add(this)" />
+    <label for="perk 8">Add two <img src="img/small_+2.png" /> <img src="img/small_Fire.png" /> cards</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 9" onclick="AddTwo2Ices(this)">
-    <input type="checkbox" id="perk 9.2" onclick="AddTwo2Ices(this)">
-    <label for="perk 9">Add two +2 <img src="img/small_Ice.png"> cards</label>
+    <input type="checkbox" id="perk 9" data-addcard="+2 Ice" data-addnumber="2" onclick="Add(this)" />
+    <input type="checkbox" id="perk 9.2" data-addcard="+2 Ice" data-addnumber="2" onclick="Add(this)" />
+    <label for="perk 9">Add two <img src="img/small_+2.png" /> <img src="img/small_Ice.png" /> cards</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 10" onclick="AddOneRollingEarthAir(this)">
-    <label for="perk 10">Add one <img src="img/small_Rolling.png"> <img src="img/small_Earth.png"> and one <img src="img/small_Rolling.png"> <img src="img/small_Air.png"> card</label>
+    <input type="checkbox" id="perk 10" onclick="AddOneRollingEarthAir(this)" />
+    <label for="perk 10">Add one <img src="img/small_Rolling.png" /> <img src="img/small_Earth.png" /> and one <img src="img/small_Rolling.png" /> <img src="img/small_Air.png" /> card</label>
 </div>
 <div class="perk">
-    <input type="checkbox" id="perk 11" onclick="AddOneRollingLightDark(this)">
-    <label for="perk 11">Add one <img src="img/small_Rolling.png"> <img src="img/small_Light.png"> and one <img src="img/small_Rolling.png"> <img src="img/small_Dark.png"> card</label>
+    <input type="checkbox" id="perk 11" onclick="AddOneRollingLightDark(this)" />
+    <label for="perk 11">Add one <img src="img/small_Rolling.png" /> <img src="img/small_Light.png" /> and one <img src="img/small_Rolling.png" /> <img src="img/small_Dark.png" /> card</label>
 </div>
+</html>
