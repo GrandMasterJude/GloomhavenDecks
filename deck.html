@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- <div>
+        <button name="resetButton" onclick="Reset()">Reset ?</button>
+    </div> -->
+    <div class="row">
+        <div class="left">
+            <div>
+                <img id="cardBack" src="img/Back.png" style="border-radius: 25px" onclick="Draw()">
+            </div>
+
+
+
+            <div>
+                <button name="rollButton" onclick="Draw()">Draw Card</button>
+                <button name="shuffleButton" onclick="Shuffle()" style="display: inline-block">Shuffle Deck</button>
+                <button name="addBless" onclick="AddBless()" style="display: inline-block">Add Bless</button>
+                <button name="addCurse" onclick="AddCurse()" style="display: inline-block">Add Curse</button>
+            </div>
+            <div id="percentChance">
+            </div>
+        </div>
+        <div class="center">
+            <div>
+                <img id="cardFront" src="img/Blank.png" style="border-radius: 25px" ondblclick="Shuffle()">
+            </div>
+        </div>
+        <div class="right">
+            <select name="Character" autocomplete="off" onchange="LoadCharacterPerks(this.value)">
+                <option value="blank" selected>Choose Character</option>
+                <option value="brute">Brute</option>
+                <option value="spellweaver">Spellweaver</option>
+                <option value="scoundrel">Scoundrel</option>
+                <option value="tinkerer">Tinkerer</option>
+                <option value="cragheart">Cragheart</option>
+                <option value="mindthief">Mindthief</option>
+                <option value="soothsinger">Soothsinger</option>
+            </select>
+
+            <div class="perks" id="perks"> 
+                <!-- Templates get placed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="deck.js"></script>
+</body>
+</html>
