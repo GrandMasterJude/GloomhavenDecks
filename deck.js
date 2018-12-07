@@ -185,17 +185,17 @@ function Replace(thisPerk) {
 function AddOneRollingEarthAir(thisPerk) {
 
     if(thisPerk.checked == true) {
-        charDeck.push('Rolling Earth','Rolling Air');
+        charDeck.push('+0 Earth Rolling','+0 Air Rolling');
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Earth')) {
-            let remove = charDeck.indexOf('Rolling Earth');
+        if (charDeck.includes('+0 Earth Rolling')) {
+            let remove = charDeck.indexOf('+0 Earth Rolling');
             charDeck.splice(remove, 1);
         }
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Air')) {
-            let remove = charDeck.indexOf('Rolling Air');
+        if (charDeck.includes('+0 Air Rolling')) {
+            let remove = charDeck.indexOf('+0 Air Rolling');
             charDeck.splice(remove, 1);
         }
     }
@@ -205,17 +205,17 @@ function AddOneRollingEarthAir(thisPerk) {
 function AddOneRollingLightDark(thisPerk) {
 
     if(thisPerk.checked == true) {
-        charDeck.push('Rolling Light','Rolling Dark');
+        charDeck.push('+0 Light Rolling','+0 Dark Rolling');
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Light')) {
-            let remove = charDeck.indexOf('Rolling Light');
+        if (charDeck.includes('+0 Light Rolling')) {
+            let remove = charDeck.indexOf('+0 Light Rolling');
             charDeck.splice(remove, 1);
         }
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Dark')) {
-            let remove = charDeck.indexOf('Rolling Dark');
+        if (charDeck.includes('+0 Dark Rolling')) {
+            let remove = charDeck.indexOf('+0 Dark Rolling');
             charDeck.splice(remove, 1);
         }
     }
@@ -225,17 +225,17 @@ function AddOneRollingLightDark(thisPerk) {
 function AddRollingDisarmMuddle(thisPerk) {
 
     if(thisPerk.checked == true) {
-        charDeck.push('Rolling Disarm','Rolling Muddle');
+        charDeck.push('+0 Disarm Rolling','+0 Muddle Rolling');
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Stun')) {
-            let remove = charDeck.indexOf('Rolling Stun');
+        if (charDeck.includes('+0 Disarm Rolling')) {
+            let remove = charDeck.indexOf('+0 Disarm Rolling');
             charDeck.splice(remove, 1);
         }
     }
     if(thisPerk.checked == false) {
-        if (charDeck.includes('Rolling Muddle')) {
-            let remove = charDeck.indexOf('Rolling Muddle');
+        if (charDeck.includes('+0 Muddle Rolling')) {
+            let remove = charDeck.indexOf('+0 Muddle Rolling');
             charDeck.splice(remove, 1);
         }
     }
