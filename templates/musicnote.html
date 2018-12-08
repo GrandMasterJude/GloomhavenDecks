@@ -38,16 +38,16 @@
     <label for="perk 9">Replace one <img src="img/small_+0.png" /> card with one +3 <img src="img/small_Muddle.png" /> card</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 10" data-rcard="+1" data-rnumber="1" data-addcard="+0 Stun" data-addnumber="1" onclick="Replace(this)" />
+    <input type="checkbox" id="perk 10" data-rcard="-1" data-rnumber="1" data-addcard="+0 Stun" data-addnumber="1" onclick="Replace(this)" />
     <label for="perk 10">Replace one <img src="img/small_-1.png" /> card with one <img src="img/small_+0.png" /> <img src="img/small_Stun.png" /> card</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 11" data-addcard="+1 Rolling" data-addnumber="3" onclick="Add(this)" />
+    <input type="checkbox" id="perk 11" data-addcard="+1 Rolling" data-addnumber="3" data-isrolling="true" onclick="Add(this)" />
     <label for="perk 11">Add three <img src="img/small_Rolling.png" /> <img src="img/small_+1.png" /> cards</label>
 </div>
 <div class="perk">    
-    <input type="checkbox" id="perk 12" data-addcard="Rolling Curse" data-addnumber="2" onclick="Add(this)" />
-    <input type="checkbox" id="perk 12.2" data-addcard="Rolling Curse" data-addnumber="2" onclick="Add(this)" />
+    <input type="checkbox" id="perk 12" data-addcard="+0 Curse Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
+    <input type="checkbox" id="perk 12.2" data-addcard="+0 Curse Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
     <label for="perk 12">Add two <img src="img/small_Rolling.png" /> <img src="img/small_Curse.png" /> cards</label>
 </div>
 </html>
