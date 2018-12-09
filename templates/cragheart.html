@@ -1,39 +1,142 @@
 <html>
-<div class="perk">    
-    <input type="checkbox" id="perk 2" data-rcard="+0" data-rnumber="4" onclick="Remove(this)" />
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 2"
+      data-rcard="+0"
+      data-rnumber="4"
+      onclick="Remove(this)"
+    />
     <label for="perk 2">Remove four <img src="img/small_+0.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 2" data-rcard="-1" data-rnumber="1" data-addcard="+1" data-addnumber="1" onclick="Replace(this)" />
-    <input type="checkbox" id="perk 2.2" data-rcard="-1" data-rnumber="1" data-addcard="+1" data-addnumber="1" onclick="Replace(this)" />
-    <input type="checkbox" id="perk 2.3" data-rcard="-1" data-rnumber="1" data-addcard="+1" data-addnumber="1" onclick="Replace(this)" />
-    <label for="perk 2">Replace one <img src="img/small_-1.png" /> card with one <img src="img/small_+1.png" /> card</label>
-</div>
-<div class="perk">
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 2"
+      data-rcard="-1"
+      data-rnumber="1"
+      data-addcard="+1"
+      data-addnumber="1"
+      onclick="Replace(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 2.2"
+      data-rcard="-1"
+      data-rnumber="1"
+      data-addcard="+1"
+      data-addnumber="1"
+      onclick="Replace(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 2.3"
+      data-rcard="-1"
+      data-rnumber="1"
+      data-addcard="+1"
+      data-addnumber="1"
+      onclick="Replace(this)"
+    />
+    <label for="perk 2"
+      >Replace one <img src="img/small_-1.png" /> card with one
+      <img src="img/small_+1.png" /> card</label
+    >
+  </div>
+  <div class="perk">
     <input type="checkbox" id="perk 3" onclick="AddOne2AndTwo2s(this)" />
-    <label for="perk 3">Add one <img src="img/small_-2.png" /> card and two <img src="img/small_+2.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 4" data-addcard="+1 Immobilize" data-addnumber="1" onclick="Add(this)" />
-    <input type="checkbox" id="perk 4.2" data-addcard="+1 Immobilize" data-addnumber="1" onclick="Add(this)" />
-    <label for="perk 4">Add one <img src="img/small_+1.png" /> <img src="img/small_Immobilize.png" /> card</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 5" data-addcard="+2 Muddle" data-addnumber="1" onclick="Add(this)" />
-    <input type="checkbox" id="perk 5.2" data-addcard="+2 Muddle" data-addnumber="1" onclick="Add(this)" />
-    <label for="perk 5">Add one <img src="img/small_+2.png" /> <img src="img/small_Muddle.png" /> card</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 6" data-addcard="+0 Push 2 Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 6">Add two <img src="img/small_Rolling.png" /> <img src="img/small_Push.png" /> 2 cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 7" data-addcard="+0 Earth Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <input type="checkbox" id="perk 7.2" data-addcard="+0 Earth Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 7">Add two <img src="img/small_Rolling.png" /> <img src="img/small_Earth.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 8" data-addcard="+0 Air Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 8">Add two <img src="img/small_Rolling.png" /> <img src="img/small_Air.png" /> cards</label>
-</div>
+    <label for="perk 3"
+      >Add one <img src="img/small_-2.png" /> card and two
+      <img src="img/small_+2.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 4"
+      data-addcard="+1 Immobilize"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 4.2"
+      data-addcard="+1 Immobilize"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <label for="perk 4"
+      >Add one <img src="img/small_+1.png" />
+      <img src="img/small_Immobilize.png" /> card</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 5"
+      data-addcard="+2 Muddle"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 5.2"
+      data-addcard="+2 Muddle"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <label for="perk 5"
+      >Add one <img src="img/small_+2.png" />
+      <img src="img/small_Muddle.png" /> card</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 6"
+      data-addcard="+0 Push 2 Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 6"
+      >Add two <img src="img/small_Rolling.png" />
+      <img src="img/small_Push.png" /> 2 cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 7"
+      data-addcard="+0 Earth Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 7.2"
+      data-addcard="+0 Earth Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 7"
+      >Add two <img src="img/small_Rolling.png" />
+      <img src="img/small_Earth.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 8"
+      data-addcard="+0 Air Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 8"
+      >Add two <img src="img/small_Rolling.png" />
+      <img src="img/small_Air.png" /> cards</label
+    >
+  </div>
 </html>

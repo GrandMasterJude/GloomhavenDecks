@@ -1,49 +1,172 @@
 <html>
-<div class="perk">
-    <input type="checkbox" id="perk 1" data-rcard="-1" data-rnumber="2" onclick="Remove(this)" />
-    <input type="checkbox" id="perk 1.2" data-rcard="-1" data-rnumber="2" onclick="Remove(this)" />
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 1"
+      data-rcard="-1"
+      data-rnumber="2"
+      onclick="Remove(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 1.2"
+      data-rcard="-1"
+      data-rnumber="2"
+      onclick="Remove(this)"
+    />
     <label for="perk 1">Remove two <img src="img/small_-1.png" /> cards</label>
-</div>
-<div class="perk">    
-    <input type="checkbox" id="perk 2" data-rcard="+0" data-rnumber="4" onclick="Remove(this)" />
-    <label for="perk 2" class="perkbox">Remove four <img src="img/small_+0.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 3" data-rcard="+1" data-rnumber="2" data-addcard="+2" data-addnumber="2" onclick="Replace(this)" />
-    <label for="perk 3" class="perkbox">Replace two <img src="img/small_+1.png" /> cards with <img src="img/small_+2.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 4"  data-rcard="-2" data-rnumber="1" data-addcard="+0" data-addnumber="1" onclick="Replace(this)" />
-    <label for="perk 4">Replace one <img src="img/small_-2.png" /> card with one <img src="img/small_+0.png" /> card</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 5"  data-addcard="+2 Ice" data-addnumber="1" onclick="Add(this)" />
-    <input type="checkbox" id="perk 5.2" data-addcard="+2 Ice" data-addnumber="1" onclick="Add(this)" />
-    <label for="perk 5.2">Add one <img src="img/small_+2.png" /> <img src="img/small_Ice.png" /> card</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 6" data-addcard="+1 Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <input type="checkbox" id="perk 6.2" data-addcard="+1 Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 6.2">Add two <img src="img/small_Rolling.png" /> <img src="img/small_+1.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 7" data-addcard="+0 Pull 1 Rolling" data-addnumber="3" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 7">Add three <img src="img/small_Rolling.png" /> <img src="img/small_Pull.png" /> 1 cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 8" data-addcard="+0 Muddle Rolling" data-addnumber="3" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 8">Add three <img src="img/small_Rolling.png" /> <img src="img/small_Muddle.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 9" data-addcard="+0 Immobilize Rolling" data-addnumber="2" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 9">Add two <img src="img/small_Rolling.png" /> <img src="img/small_Immobilize.png" /> cards</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 10" data-addcard="+0 Stun Rolling" data-addnumber="1" data-isrolling="true" onclick="Add(this)" />
-    <label for="perk 10">Add one <img src="img/small_Rolling.png" /> <img src="img/small_Stun.png" /> card</label>
-</div>
-<div class="perk">
-    <input type="checkbox" id="perk 11"onclick="AddRollingDisarmMuddle(this)" />
-    <label for="perk 11">Add one <img src="img/small_Rolling.png" /> <img src="img/small_Disarm.png" /> card and one <img src="img/small_Rolling.png" /> <img src="img/small_Muddle.png" /> card</label>
-</div>
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 2"
+      data-rcard="+0"
+      data-rnumber="4"
+      onclick="Remove(this)"
+    />
+    <label for="perk 2" class="perkbox"
+      >Remove four <img src="img/small_+0.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 3"
+      data-rcard="+1"
+      data-rnumber="2"
+      data-addcard="+2"
+      data-addnumber="2"
+      onclick="Replace(this)"
+    />
+    <label for="perk 3" class="perkbox"
+      >Replace two <img src="img/small_+1.png" /> cards with
+      <img src="img/small_+2.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 4"
+      data-rcard="-2"
+      data-rnumber="1"
+      data-addcard="+0"
+      data-addnumber="1"
+      onclick="Replace(this)"
+    />
+    <label for="perk 4"
+      >Replace one <img src="img/small_-2.png" /> card with one
+      <img src="img/small_+0.png" /> card</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 5"
+      data-addcard="+2 Ice"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 5.2"
+      data-addcard="+2 Ice"
+      data-addnumber="1"
+      onclick="Add(this)"
+    />
+    <label for="perk 5.2"
+      >Add one <img src="img/small_+2.png" />
+      <img src="img/small_Ice.png" /> card</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 6"
+      data-addcard="+1 Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <input
+      type="checkbox"
+      id="perk 6.2"
+      data-addcard="+1 Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 6.2"
+      >Add two <img src="img/small_Rolling.png" />
+      <img src="img/small_+1.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 7"
+      data-addcard="+0 Pull 1 Rolling"
+      data-addnumber="3"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 7"
+      >Add three <img src="img/small_Rolling.png" />
+      <img src="img/small_Pull.png" /> 1 cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 8"
+      data-addcard="+0 Muddle Rolling"
+      data-addnumber="3"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 8"
+      >Add three <img src="img/small_Rolling.png" />
+      <img src="img/small_Muddle.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 9"
+      data-addcard="+0 Immobilize Rolling"
+      data-addnumber="2"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 9"
+      >Add two <img src="img/small_Rolling.png" />
+      <img src="img/small_Immobilize.png" /> cards</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 10"
+      data-addcard="+0 Stun Rolling"
+      data-addnumber="1"
+      data-isrolling="true"
+      onclick="Add(this)"
+    />
+    <label for="perk 10"
+      >Add one <img src="img/small_Rolling.png" />
+      <img src="img/small_Stun.png" /> card</label
+    >
+  </div>
+  <div class="perk">
+    <input
+      type="checkbox"
+      id="perk 11"
+      onclick="AddRollingDisarmMuddle(this)"
+    />
+    <label for="perk 11"
+      >Add one <img src="img/small_Rolling.png" />
+      <img src="img/small_Disarm.png" /> card and one
+      <img src="img/small_Rolling.png" />
+      <img src="img/small_Muddle.png" /> card</label
+    >
+  </div>
 </html>
