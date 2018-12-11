@@ -1,3 +1,7 @@
+/* All individual perk data is stored in the checkboxes in the template files
+these functions just manipulate the data and display it
+*/
+//Starting deck of cards
 var charDeck = [
   "+0",
   "+0",
@@ -20,10 +24,13 @@ var charDeck = [
   "Miss",
   "x2"
 ];
+//Cards go here after they are drawn
 var discard = [];
+//An array of the unique card values in charDeck
 var possiblecards = charDeck.filter(UniqueArray);
 var numOfRollingCards = 0;
 
+//Resets to the defaults, maybe I should put the above here and call it on the page load
 function Reset() {
   charDeck = [
     "+0",
@@ -54,7 +61,7 @@ function Reset() {
 
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function LoadCharacterPerks(character) {
@@ -109,9 +116,12 @@ function Shuffle() {
   document.getElementById("cardFront").src = "img/Blank.png";
   discard = [];
 
+  //Maybe add an actual shuffling algorithm here
+  //Not really needed since I pick cards at random
+
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function AddBless() {
@@ -124,8 +134,7 @@ function AddBless() {
     charDeck.push("Bless");
     CalculatePercents();
     document.getElementById("modifieraverage").innerHTML =
-      "Average Modifier: " +
-      Math.floor(CalculateAverageModifier() * 1000) / 1000;
+      "Average Modifier: " + CalculateAverageModifier();
   }
 }
 
@@ -139,8 +148,7 @@ function AddCurse() {
     charDeck.push("Curse");
     CalculatePercents();
     document.getElementById("modifieraverage").innerHTML =
-      "Average Modifier: " +
-      Math.floor(CalculateAverageModifier() * 1000) / 1000;
+      "Average Modifier: " + CalculateAverageModifier();
   }
 }
 
@@ -153,6 +161,12 @@ function UpdatePossibleCards() {
   possiblecards.sort();
 }
 
+/**
+ * This makes the unordered list which has the card names
+ * and percentage chance
+ * It should get passed the unique array of possible cards
+ * @param {*} array
+ */
 function makeList(array) {
   var list = document.createElement("ul");
 
@@ -171,6 +185,8 @@ function makeList(array) {
     list.appendChild(item);
   }
   return list;
+  //TODO it would be nice to add images to this to match the perks but
+  // I'd have to change the way I go about making it
 }
 
 function CalculatePercents() {
@@ -182,7 +198,7 @@ function CalculatePercents() {
 }
 
 function CalculateAverageModifier() {
-  total = 0;
+  let total = 0;
   charDeck.forEach(element => {
     thisNum = parseInt(element);
     if (isNaN(thisNum) == false) {
@@ -199,7 +215,8 @@ function CalculateAverageModifier() {
   console.log(
     "Total: " + total + " / " + (charDeck.length - numOfRollingCards)
   );
-  return total / (charDeck.length - numOfRollingCards);
+  let avg = total / (charDeck.length - numOfRollingCards);
+  return Math.floor(avg * 1000) / 1000;
 
   //Do I want to update this every time they draw a card?
   //If I do then I need a way to keep numOfRollingCards==to only the amount in the deck
@@ -207,9 +224,15 @@ function CalculateAverageModifier() {
   //It would be great to calculate advantage/disadvantage as well
   //How would I go about that?
 }
+Remove();
 
 CalculatePercents();
 
+/**
+ * @param {object} thisPerk
+ * Removes thisPerk.rcard from the deck
+ * thisPerk.rnumber amount of times
+ */
 function Remove(thisPerk) {
   if (thisPerk.checked == true) {
     for (let i = 0; i < thisPerk.dataset.rnumber; i++) {
@@ -226,9 +249,14 @@ function Remove(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
+/**
+ * @param {object} thisPerk
+ * Adds thisPerk.addcard to the deck
+ * thisPerk.addnumber amount of times
+ */
 function Add(thisPerk) {
   if (thisPerk.checked == true) {
     for (let i = 0; i < thisPerk.dataset.addnumber; i++) {
@@ -251,13 +279,16 @@ function Add(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function Replace(thisPerk) {
   Add(thisPerk);
   Remove(thisPerk);
 }
+
+/* These four functions are for the perks that add more than one type of card,
+so they won't work with the above functions */
 
 function AddOneRollingEarthAir(thisPerk) {
   if (thisPerk.checked == true) {
@@ -280,7 +311,7 @@ function AddOneRollingEarthAir(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function AddOneRollingLightDark(thisPerk) {
@@ -304,7 +335,7 @@ function AddOneRollingLightDark(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function AddRollingDisarmMuddle(thisPerk) {
@@ -328,7 +359,7 @@ function AddRollingDisarmMuddle(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }
 
 function AddOne2AndTwo2s(thisPerk) {
@@ -350,5 +381,5 @@ function AddOne2AndTwo2s(thisPerk) {
   }
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
-    "Average Modifier: " + Math.floor(CalculateAverageModifier() * 1000) / 1000;
+    "Average Modifier: " + CalculateAverageModifier();
 }

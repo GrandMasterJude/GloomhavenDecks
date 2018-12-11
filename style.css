@@ -1,43 +1,43 @@
 * {
-    font-family: Pirata One, serif;
-    font-size: 18pt;
-    /* color: #05497B; */
+  font-family: Pirata One, serif;
+  font-size: 18pt;
+  /* color: #05497B; this is the color in the scenario book
+  but I don't think it looks as good as black */
 }
 
 body {
-    background-image: url("img/Blank\ Map.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-
+  background-image: url("img/Blank\ Map.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .perk {
-    padding-top: 14px;
+  padding-top: 14px;
 }
 /* button {
-
+  Not sure what I want these to look like yet
 } */
 
 .flex-container {
-    display: flex;
+  display: flex;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .right {
-    flex: 33%;
-    padding-top: 8%
+  flex: 33%;
+  padding-top: 8%;
 }
 
 .left {
-    flex: 34%;
-    padding-top: 3%
+  flex: 34%;
+  padding-top: 3%;
 }
 
 .center {
-    flex: 33%;
-    padding-top: 3%
+  flex: 33%;
+  padding-top: 3%;
 }
