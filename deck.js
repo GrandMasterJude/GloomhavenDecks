@@ -29,6 +29,7 @@ var discard = [];
 //An array of the unique card values in charDeck
 var possiblecards = charDeck.filter(UniqueArray);
 var numOfRollingCards = 0;
+var RollingCardsInDeck = 0;
 
 //Resets to the defaults, maybe I should put the above here and call it on the page load
 function Reset() {
@@ -58,6 +59,7 @@ function Reset() {
   document.getElementById("cardFront").src = "img/Blank.png";
   document.getElementById("cardBack").src = "img/Back.png";
   numOfRollingCards = 0;
+  RollingCardsInDeck = 0;
 
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
@@ -89,17 +91,17 @@ function Draw() {
     document.getElementById("cardFront").src = "img/" + charDeck[card] + ".png";
     if (charDeck[card] == "Bless") {
       let cardIndex = charDeck.indexOf(charDeck[card]);
-
       charDeck.splice(cardIndex, 1);
     } else if (charDeck[card] == "Curse") {
       let cardIndex = charDeck.indexOf(charDeck[card]);
-
       charDeck.splice(cardIndex, 1);
     } else {
       discard.push(charDeck[card]);
+      if (charDeck[card].includes("Rolling")) {
+        RollingCardsInDeck -= 1;
+      }
 
       let cardIndex = charDeck.indexOf(charDeck[card]);
-
       charDeck.splice(cardIndex, 1);
     }
 
@@ -115,9 +117,9 @@ function Shuffle() {
   document.getElementById("cardBack").src = "img/Back.png";
   document.getElementById("cardFront").src = "img/Blank.png";
   discard = [];
-
+  RollingCardsInDeck = numOfRollingCards;
   //Maybe add an actual shuffling algorithm here
-  //Not really needed since I pick cards at random
+  //Not really needed since I pick cards at random?
 
   CalculatePercents();
   document.getElementById("modifieraverage").innerHTML =
@@ -195,6 +197,16 @@ function CalculatePercents() {
   document.getElementById("percentChance").appendChild(makeList(possiblecards));
   document.getElementById("decktotal").innerHTML =
     "Total Cards in Deck: " + charDeck.length;
+
+  // Maybe delete this? Maybe keep it here, maybe make two divs?
+  document.getElementById("modifieraverage").innerHTML =
+    "Average Modifier: " + CalculateAverageModifier();
+
+  document.getElementById("advantage").innerHTML =
+    "Average with Advantage: " + CalculateAdvantage();
+
+  document.getElementById("disadvantage").innerHTML =
+    "Average with Disadvantage: " + CalculateDisadvantage();
 }
 
 function CalculateAverageModifier() {
@@ -210,23 +222,144 @@ function CalculateAverageModifier() {
     if (element == "Curse") {
       total -= 2;
     }
+    if (element == "x2") {
+      total += 2;
+    }
+    if (element == "Miss") {
+      total -= 2;
+    }
   });
-  console.log("charDeck.length: " + charDeck.lenght);
-  console.log(
-    "Total: " + total + " / " + (charDeck.length - numOfRollingCards)
-  );
-  let avg = total / (charDeck.length - numOfRollingCards);
+
+  let avg = total / (charDeck.length - RollingCardsInDeck);
   return Math.floor(avg * 1000) / 1000;
-
-  //Do I want to update this every time they draw a card?
-  //If I do then I need a way to keep numOfRollingCards==to only the amount in the deck
-
-  //It would be great to calculate advantage/disadvantage as well
-  //How would I go about that?
 }
-Remove();
 
-CalculatePercents();
+function CalculateAdvantage() {
+  let total = 0;
+  let totcards = 0;
+  for (i = 0; i < charDeck.length; i++) {
+    thisNum = parseInt(charDeck[i]);
+
+    //convert the nonnumerical cards tht parseInt doesn't
+    if (charDeck[i] == "Bless") {
+      thisNum = 2;
+    }
+    if (charDeck[i] == "Curse") {
+      thisNum = -2;
+    }
+    if (charDeck[i] == "x2") {
+      thisNum = 2;
+    }
+    if (charDeck[i] == "Miss") {
+      thisNum = -2;
+    }
+
+    for (j = 0; j < charDeck.length; j++) {
+      thisNum2 = parseInt(charDeck[j]);
+
+      //so the card won't get compared against itself
+      if (i !== j) {
+        if (charDeck[j] == "Bless") {
+          thisNum2 = 2;
+        }
+        if (charDeck[j] == "Curse") {
+          thisNum2 = -2;
+        }
+        if (charDeck[j] == "x2") {
+          thisNum2 = 2;
+        }
+        if (charDeck[j] == "Miss") {
+          thisNum2 = -2;
+        }
+
+        if (thisNum > thisNum2) {
+          total += thisNum;
+        } else {
+          total += thisNum2;
+        }
+
+        totcards += 1;
+      }
+    }
+  }
+
+  //Only subtract rolling +1s from the deck total
+  let rollOnes = 0;
+  charDeck.forEach(card => {
+    if (card == "+1 Rolling") {
+      rollOnes += 1;
+    }
+  });
+
+  //This still isn't quite right because you could
+  //draw two rolling cards and keep going. Which makes
+  //the number of possibilies needed to get the average
+  //a very large and complex number
+
+  let avg = total / (totcards - rollOnes);
+
+  return Math.floor(avg * 1000) / 1000;
+}
+
+function CalculateDisadvantage() {
+  let total = 0;
+  let totcards = 0;
+  for (i = 0; i < charDeck.length; i++) {
+    if (charDeck[i].includes("Rolling")) {
+      continue;
+    }
+
+    thisNum = parseInt(charDeck[i]);
+
+    //convert the nonnumerical cards tht parseInt doesn't
+    if (charDeck[i] == "Bless") {
+      thisNum = 2;
+    }
+    if (charDeck[i] == "Curse") {
+      thisNum = -2;
+    }
+    if (charDeck[i] == "x2") {
+      thisNum = 2;
+    }
+    if (charDeck[i] == "Miss") {
+      thisNum = -2;
+    }
+
+    for (j = 0; j < charDeck.length; j++) {
+      if (charDeck[j].includes("Rolling")) {
+        continue;
+      }
+
+      thisNum2 = parseInt(charDeck[j]);
+
+      //so the card won't get compared against itself
+      if (i !== j) {
+        if (charDeck[j] == "Bless") {
+          thisNum2 = 2;
+        }
+        if (charDeck[j] == "Curse") {
+          thisNum2 = -2;
+        }
+        if (charDeck[j] == "x2") {
+          thisNum2 = 2;
+        }
+        if (charDeck[j] == "Miss") {
+          thisNum2 = -2;
+        }
+
+        if (thisNum < thisNum2) {
+          total += thisNum;
+        } else {
+          total += thisNum2;
+        }
+
+        totcards += 1;
+      }
+    }
+  }
+  let avg = total / totcards;
+  return Math.floor(avg * 1000) / 1000;
+}
 
 /**
  * @param {object} thisPerk
@@ -263,6 +396,7 @@ function Add(thisPerk) {
       charDeck.push(thisPerk.dataset.addcard);
       if (thisPerk.dataset.isrolling == "true") {
         numOfRollingCards += 1;
+        RollingCardsInDeck += 1;
       }
     }
   }
@@ -274,6 +408,7 @@ function Add(thisPerk) {
       }
       if (thisPerk.dataset.isrolling == "true") {
         numOfRollingCards -= 1;
+        RollingCardsInDeck -= 1;
       }
     }
   }
@@ -383,3 +518,6 @@ function AddOne2AndTwo2s(thisPerk) {
   document.getElementById("modifieraverage").innerHTML =
     "Average Modifier: " + CalculateAverageModifier();
 }
+
+//So they will be there when the page loads
+CalculatePercents();
