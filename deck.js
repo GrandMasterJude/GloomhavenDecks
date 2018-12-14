@@ -196,9 +196,11 @@ function CalculatePercents() {
   document.getElementById("percentChance").innerHTML = "";
   document.getElementById("percentChance").appendChild(makeList(possiblecards));
   document.getElementById("decktotal").innerHTML =
-    "Total Cards in Deck: " + charDeck.length;
+    "Cards in Deck: " +
+    charDeck.length +
+    " / " +
+    (charDeck.length + discard.length);
 
-  // Maybe delete this? Maybe keep it here, maybe make two divs?
   document.getElementById("modifieraverage").innerHTML =
     "Average Modifier: " + CalculateAverageModifier();
 
@@ -231,7 +233,13 @@ function CalculateAverageModifier() {
   });
 
   let avg = total / (charDeck.length - RollingCardsInDeck);
-  return Math.floor(avg * 1000) / 1000;
+  avg = Math.floor(avg * 1000) / 1000;
+
+  if (isNaN(avg)) {
+    avg = "";
+  }
+
+  return avg;
 }
 
 function CalculateAdvantage() {
@@ -297,8 +305,13 @@ function CalculateAdvantage() {
   //a very large and complex number
 
   let avg = total / (totcards - rollOnes);
+  avg = Math.floor(avg * 1000) / 1000;
 
-  return Math.floor(avg * 1000) / 1000;
+  if (isNaN(avg)) {
+    avg = "";
+  }
+
+  return avg;
 }
 
 function CalculateDisadvantage() {
@@ -358,7 +371,13 @@ function CalculateDisadvantage() {
     }
   }
   let avg = total / totcards;
-  return Math.floor(avg * 1000) / 1000;
+  avg = Math.floor(avg * 1000) / 1000;
+
+  if (isNaN(avg)) {
+    avg = "";
+  }
+
+  return avg;
 }
 
 /**
