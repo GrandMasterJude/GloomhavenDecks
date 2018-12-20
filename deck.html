@@ -17,29 +17,29 @@
             id="cardBack"
             src="img/Back.png"
             style="border-radius: 25px"
-            onclick="Draw()"
+            onclick="draw()"
           />
         </div>
 
         <div>
-          <button name="rollButton" onclick="Draw()">Draw Card</button>
+          <button name="rollButton" onclick="draw()">Draw Card</button>
           <button
             name="shuffleButton"
-            onclick="Shuffle()"
+            onclick="shuffle()"
             style="display: inline-block"
           >
             Shuffle Deck
           </button>
           <button
             name="addBless"
-            onclick="AddBless()"
+            onclick="addBless()"
             style="display: inline-block"
           >
             Add Bless
           </button>
           <button
             name="addCurse"
-            onclick="AddCurse()"
+            onclick="addCurse()"
             style="display: inline-block"
           >
             Add Curse
@@ -53,7 +53,7 @@
             id="cardFront"
             src="img/Blank.png"
             style="border-radius: 25px"
-            ondblclick="Shuffle()"
+            ondblclick="shuffle()"
           />
         </div>
         <div>
@@ -67,7 +67,7 @@
         <select
           name="Character"
           autocomplete="off"
-          onchange="LoadCharacterPerks(this.value)"
+          onchange="loadCharacterPerks(this.value)"
         >
           <option value="blank" selected>Choose Character</option>
           <option value="brute">Brute</option>

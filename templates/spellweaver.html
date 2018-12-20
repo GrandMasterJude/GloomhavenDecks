@@ -5,7 +5,7 @@
       id="perk 1"
       data-rcard="+0"
       data-rnumber="4"
-      onclick="Remove(this)"
+      onclick="remove(this)"
     />
     <label for="perk 1">Remove four <img src="img/small_+0.png" /> cards</label>
   </div>
@@ -17,7 +17,7 @@
       data-rnumber="1"
       data-addcard="+1"
       data-addnumber="1"
-      onclick="Replace(this)"
+      onclick="replace(this)"
     />
     <input
       type="checkbox"
@@ -26,7 +26,7 @@
       data-rnumber="1"
       data-addcard="+1"
       data-addnumber="1"
-      onclick="Replace(this)"
+      onclick="replace(this)"
     />
     <label for="perk 2"
       >Replace one <img src="img/small_-1.png" /> card with one
@@ -39,14 +39,14 @@
       id="perk 3"
       data-addcard="+1"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <input
       type="checkbox"
       id="perk 3.2"
       data-addcard="+1"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 3">Add two <img src="img/small_+1.png" /> cards</label>
   </div>
@@ -56,7 +56,7 @@
       id="perk 4"
       data-addcard="+0 Stun"
       data-addnumber="1"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 4"
       >Add one <img src="img/small_+0.png" />
@@ -69,7 +69,7 @@
       id="perk 5"
       data-addcard="+1 Wound"
       data-addnumber="1"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 5"
       >Add one <img src="img/small_+1.png" />
@@ -82,7 +82,7 @@
       id="perk 6"
       data-addcard="+1 Immobilize"
       data-addnumber="1"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 6"
       >Add one <img src="img/small_+1.png" />
@@ -95,7 +95,7 @@
       id="perk 7"
       data-addcard="+1 Curse"
       data-addnumber="1"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 7"
       >Add one <img src="img/small_+1.png" />
@@ -108,14 +108,14 @@
       id="perk 8"
       data-addcard="+2 Fire"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <input
       type="checkbox"
       id="perk 8.2"
       data-addcard="+2 Fire"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 8"
       >Add two <img src="img/small_+2.png" />
@@ -128,14 +128,14 @@
       id="perk 9"
       data-addcard="+2 Ice"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <input
       type="checkbox"
       id="perk 9.2"
       data-addcard="+2 Ice"
       data-addnumber="2"
-      onclick="Add(this)"
+      onclick="add(this)"
     />
     <label for="perk 9"
       >Add two <img src="img/small_+2.png" />
@@ -143,7 +143,7 @@
     >
   </div>
   <div class="perk">
-    <input type="checkbox" id="perk 10" onclick="AddOneRollingEarthAir(this)" />
+    <input type="checkbox" id="perk 10" onclick="addOneRollingEarthAir(this)" />
     <label for="perk 10"
       >Add one <img src="img/small_Rolling.png" />
       <img src="img/small_Earth.png" /> and one
@@ -155,7 +155,7 @@
     <input
       type="checkbox"
       id="perk 11"
-      onclick="AddOneRollingLightDark(this)"
+      onclick="addOneRollingLightDark(this)"
     />
     <label for="perk 11"
       >Add one <img src="img/small_Rolling.png" />
